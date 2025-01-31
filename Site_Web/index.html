@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Station Météo Rhône-Alpes</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Lien vers le fichier CSS -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="title">🌤️ Station Météo - Rhône-Alpes</div>
+    <div class="dropdown">
+      <select id="city-select" class="custom-select" onchange="updateCityWeather()">
+        <option value="default">Choisir une ville ...</option>
+        <option value="Lyon" selected>Lyon</option>
+        <option value="Grenoble">Grenoble</option>
+        <option value="Annecy">Annecy</option>
+        <option value="Chambéry">Chambéry</option>
+        <option value="Valence">Valence</option>
+    </select>    
+    </div>
+    <div class="weather">
+      <div class="data">
+        🌡️ <span class="label">Température :</span> 
+        <span id="temperature" class="value">-- °C</span>
+      </div>
+      <div class="data">
+        💧 <span class="label">Humidité :</span> 
+        <span id="humidity" class="value">-- %</span>
+      </div>
+    </div>
+    <div id="loader" class="loader"></div>
+  </div>
+
+  <script src="js/script.js"></script> <!-- Lien vers le fichier JavaScript -->
+</body>
+</html>
